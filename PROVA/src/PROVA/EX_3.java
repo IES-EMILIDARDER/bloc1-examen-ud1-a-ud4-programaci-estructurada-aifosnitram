@@ -3,6 +3,7 @@ package PROVA;
 import java.util.ArrayList;
 
 public class EX_3 {
+
     public static void main(String[] args) {
         int[] array;  // 'array' de 5 posicions amb valors aleatoris entre 0 i 9
         ArrayList<Integer> resultat;  // 'arraylist' resultant
@@ -14,10 +15,9 @@ public class EX_3 {
         resultat = UtilExamen.ordenaArray(array);
 
         //Comprovacio del array que es genera
-        //UtilExamen.mostraArray(array);
+        UtilExamen.mostraArray(array);
 
         // Mostra l''ArrayList' resultant
         UtilExamen.mostrarArrayListInt(resultat);
     }
 }
-

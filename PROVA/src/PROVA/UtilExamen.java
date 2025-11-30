@@ -3,7 +3,7 @@ package PROVA;
 import java.util.ArrayList;
 
 public class UtilExamen {
-    //Utilitats generals 
+//Utilitats generals 
     //Genera un array aleatori
 
     public static int[] generaArray(int longitud, int minim, int maxim) {
@@ -33,7 +33,7 @@ public class UtilExamen {
         ArrayList<Integer> resultat = new ArrayList<>();
 
         for (Integer num : array) {
-            if (!resultat.contains(num)) // si 'num' no es troba en 'resultat', s'afegeix
+            if (!resultat.contains(num)) // si 'num' no es troba en 'resultat', s'afegeix  // CORRECCIÓ: varem quedar de no emprar 'contains()'
             {
                 resultat.add(num);
             }
@@ -81,12 +81,15 @@ public class UtilExamen {
     public static ArrayList<Integer> obteRepetits(int[] array1, int[] array2) {
         ArrayList<Integer> repetit = new ArrayList<>();
 
-        ArrayList<Integer> arrayL1 = mostrarDiferents(array1);
-        ArrayList<Integer> arrayL2 = mostrarDiferents(array2);
+        //ArrayList<Integer> arrayL1 = mostrarDiferents(array1);
+        //ArrayList<Integer> arrayL2 = mostrarDiferents(array2);
+        ArrayList<Integer> arrayL1 = arrayToArrayListInt(array1);  // CORRECCIÓ: no es demanava eliminar els repetits ...
+        ArrayList<Integer> arrayL2 = arrayToArrayListInt(array2);
         for (int i = 0; i < arrayL1.size(); i++) {
             for (int j = 0; j < arrayL2.size(); j++) {
                 if (arrayL1.get(i) == arrayL2.get(j)) {
                     repetit.add(arrayL1.get(i));
+                    break;  // CORRECCIÓ: aquest break és necessari per tal de no repetir els elements ''aray1' a 'array2'
                 }
             }
         }
